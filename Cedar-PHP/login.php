@@ -35,15 +35,15 @@ if(empty($_SESSION['signed_in'])){
 		$errors = array();
 
 		if(!empty($_SESSION['signed_in'])) {
-			$errors[] = 'Already signed in';
+			$errors[] = 'Already signed in.';
 		}
 
 		if(empty($_POST['username'])){
-			$errors[] = 'User ID cannot be empty';
+			$errors[] = 'User ID cannot be empty.';
 		}
 
 		if(empty($_POST['password'])){
-			$errors[] = 'Passord cannot be empty';
+			$errors[] = 'Password cannot be empty.';
 		}
 
 		$search_user = $dbc->prepare('SELECT * FROM users WHERE user_name = ? LIMIT 1');
