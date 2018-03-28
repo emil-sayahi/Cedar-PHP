@@ -3,7 +3,7 @@ require_once('lib/htm.php');
 require_once('lib/htmUsers.php');
 
 if (empty($_SESSION['signed_in'])) {
-    exit('please sign in');
+    exit('Please sign in.');
 }
 
 $get_title = $dbc->prepare('SELECT * FROM titles WHERE title_id = ? LIMIT 1');
@@ -12,13 +12,13 @@ $get_title->execute();
 $title_result = $get_title->get_result();
 
 if ($title_result->num_rows == 0) {
-    exit("Could not find community");
+    exit("Could not find community.");
 }
 
 $title = $title_result->fetch_array();
 
 if ($_SESSION['user_id'] != $title['title_by']) {
-    exit('you didn\'t make the community faggot');
+    exit('You don\'t appear to be the creator of this community!');
 }
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
