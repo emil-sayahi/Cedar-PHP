@@ -59,7 +59,7 @@ if(empty($_SESSION['signed_in'])){
 		$user = $user_result->fetch_assoc();
 
 		if(!password_verify($_POST['password'], $user['user_pass'])) {
-			$errors[] = 'User ID and password don\'t match'; 
+			$errors[] = 'User ID and password don\'t match.'; 
 		} 
 
 		if (empty($errors)) {
