@@ -2182,7 +2182,7 @@ h2.reply-label {
 
 /* Yeah I know it's called tab2 but its being used for 3 things now fuck off. */
 .tab2 a {
-    width: 33.333333333%;
+    width: calc(100%  /3);
 }
 
 .tab2 a span, .tab3 a span {
@@ -3509,7 +3509,7 @@ form.search {
     display: table-cell;
     padding: 15px 0 10px;
     vertical-align: top;
-    width: 33.333333333%;
+    width: calc(100%  /3);
 }
 
 .sidebar-setting .sidebar-post-menu a:first-child:nth-last-child(4),
