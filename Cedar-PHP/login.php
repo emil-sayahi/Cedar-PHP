@@ -7,7 +7,7 @@ if(empty($_SESSION['signed_in'])){
 		<!DOCTYPE html>
         <html lang="en">
         <head>
-        	<title>Sign In to Cedar</title>
+        	<title>Sign Into Cedar</title>
         	<meta name="viewport" content="width=device-width,minimum-scale=1, maximum-scale=1">
         	<link rel="stylesheet" type="text/css" href="/assets/css/login.css">
         </head>
@@ -35,15 +35,15 @@ if(empty($_SESSION['signed_in'])){
 		$errors = array();
 
 		if(!empty($_SESSION['signed_in'])) {
-			$errors[] = 'Already signed in';
+			$errors[] = 'Already signed in.';
 		}
 
 		if(empty($_POST['username'])){
-			$errors[] = 'User ID cannot be empty';
+			$errors[] = 'User ID cannot be empty.';
 		}
 
 		if(empty($_POST['password'])){
-			$errors[] = 'Passord cannot be empty';
+			$errors[] = 'Password cannot be empty.';
 		}
 
 		$search_user = $dbc->prepare('SELECT * FROM users WHERE user_name = ? LIMIT 1');
@@ -52,7 +52,7 @@ if(empty($_SESSION['signed_in'])){
 		$user_result = $search_user->get_result();
 
 		if(!$user_result || $user_result->num_rows == 0) {
-			$errors[] = 'User ID doesn\'t exsist';
+			$errors[] = 'User ID doesn\'t exist.';
 			exit('<script type="text/javascript">alert("' . $errors[0] . '");</script><META HTTP-EQUIV="refresh" content="0;URL=/login">');
 		}
 
