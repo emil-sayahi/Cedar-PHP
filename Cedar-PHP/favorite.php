@@ -15,7 +15,7 @@ if (!empty($_SESSION['signed_in'])) {
                 $favorite->execute();
                 echo 'success';
             } else {
-                echo 'the community was already favorited lmao';
+                echo 'The community was already favorited.';
             }
         } elseif ($_POST['favType'] == 'removeFav') {
             $check_favorite = $dbc->prepare('SELECT * FROM favorite_titles WHERE user_id = ? AND title_id = ? LIMIT 1');
@@ -29,7 +29,7 @@ if (!empty($_SESSION['signed_in'])) {
                 $favorite->execute();
                 echo 'success';
             } else {
-                echo 'the community was never even favorited in the first place lmao';
+                echo 'The community was never favorited.';
             }
         }
     }
